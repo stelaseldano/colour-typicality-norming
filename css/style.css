@@ -1,0 +1,98 @@
+/* general styles */
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+
+	font-family: "Lato", serif;
+}
+
+p,
+h1,
+h2,
+h3,
+button {
+	color: #222;
+}
+
+button {
+	display: block;
+	font-family: "Lato", sans-serif;
+	font-size: 16px;
+	margin: 0 auto;
+}
+
+main {
+	box-sizing: border-box;
+	display: block;
+	margin: 50px auto;
+	max-width: 860px;
+	padding: 0 30px;
+}
+
+.intro-templ,
+.instructions-templ {
+	margin: 0 auto;
+}
+
+/* trial template styles */
+
+.trial-templ {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.trial-templ h3 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.trial-templ .slider {
+	display: flex;
+	margin: 30px auto;
+}
+
+.trial-templ .slider input {
+	width: 300px;
+}
+
+.image {
+	margin: 0 auto;
+	max-width: 580px;
+}
+
+/* slider styles */
+
+input[type="range"]:focus {
+	border: none;
+	outline: none;
+}
+
+input[type="range"]::-range-track {
+	background: orange;
+	border-radius: 3px;
+	height: 12px;
+}
+
+input[type="range"]::-moz-range-thumb {
+	background: #444;
+	box-shadow: 2px 1px rgba(0, 0, 0, 0.3);
+	border: none;
+	border-radius: 50%;
+	height: 24px;
+	width: 24px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: #444;
+	box-shadow: 2px 1px rgba(0, 0, 0, 0.3);
+	border: none;
+	border-radius: 50%;
+	height: 24px;
+	width: 24px;
+}

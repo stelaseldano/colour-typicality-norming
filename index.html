@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<!-- fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:400|Noto+Serif:700" rel="stylesheet">
+
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+		<!-- js dependencies -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/mustache.js/mustache.min.js"></script>
+
+		<!-- js -->
+		<script src="js/main.js"></script>
+		<script src="js/views.js"></script>
+	</head>
+
+	<body>
+
+		<noscript>This task requires JavaScript.</noscript>
+
+		<main id="main">
+			Loading...
+		</main>
+		<script id="intro-templ" type="x-tmpl-mustache">
+			<div class="intro-templ">
+				<article>
+					<h1>Welcome page with general information about the study.</h1>
+				</article>
+				<button type="submit" id="start-exp-btn">go to experiment</button>
+			</div>
+		</script>
+		<script id="instructions-templ" type="x-tmpl-mustache">
+			<div class="instructions-templ">
+				<h2>Instructions page with information what will be shown during the experiment and what the participants are expected to do.</h2>
+				<button type="submit" id="continue-btn" class="continue-btn">continue</button>
+			</div>
+		</script>
+		<script id="practice-templ" type="x-tmpl-mustache">
+			<div class="practice-templ">
+				<h2>Practice section</h2>
+			</div>
+		</script>
+		<script id="begin-templ" type="x-tmpl-mustache">
+			<div class="begin-templ">
+				<button type="submit" id="continue-btn" class="continue-btn">start experiment</button>
+			</div>
+		</script>
+		<script id="trial-templ" type="x-tmpl-mustache">
+			<div class="trial-templ">
+					<div class="image"></div>
+					<p>sample trial slide</p>
+					<h3 class="question">Ist diese Farbe typisch für eine Möhre?</h3>
+					<img class="image" src="images/carrot_purple.png" />
+					<section class="slider">
+						<span>untypisch</span>
+						<input type="range" min="0" step="5" max="100" value="50"/>
+						<span>sehr typisch</span>
+					</section>
+					<button type="submit" id="continue-btn" class="continue-btn">next</button>
+			</div>
+		</script>
+	</body>
+</html>
