@@ -1,0 +1,24 @@
+{
+  "name": "colour-typicality-norming",
+  "version": "1.0.0",
+  "description": "## Cloning and running the project",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "mustache": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stelaseldano/colour-typicality-norming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stelaseldano/colour-typicality-norming/issues"
+  },
+  "homepage": "https://github.com/stelaseldano/colour-typicality-norming#readme"
+}
