@@ -4,17 +4,28 @@ $(document).ready(function(){
 
 var exp = {};
 
+/* view handler */
 exp.getNextView = function() {
 	if (this.view.name === 'intro') {
 		this.view = initInstructionsView();
 	} else if (this.view.name === 'instructions') {
-		this.view = initTrialView();
+		this.view.name === 'trial';
+		this.view = initTrialView(this.ctn.data[this.currentTrial]);
+		this.ctn.addResponse(this.currentTrial, this.view.response);
+		this.currentTrial++;
+	} else if (this.currentTrial < this.ctn.data.length){
+		this.view = initTrialView(this.ctn.data[this.currentTrial]);
+		this.ctn.addResponse(this.currentTrial, this.view.response);
+		this.currentTrial++;
 	} else {
-		console.log("No view for now");
+		this.view.name = 'thanks';
+		this.view = initThanksView(this.ctn.getJSON());
 	}
 };
 
+/* CTN - colour typicallity norming */
 exp.init = function() {
-	console.log('Experiment initialised!');
-	this.view = initTrialView();
+	this.ctn = initCtn();
+	this.currentTrial = 0;
+	this.view = initIntroductionView();
 };

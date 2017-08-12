@@ -15,6 +15,7 @@
 
 		<!-- js -->
 		<script src="js/main.js"></script>
+		<script src="js/exp.js"></script>
 		<script src="js/views.js"></script>
 	</head>
 
@@ -52,15 +53,23 @@
 		<script id="trial-templ" type="x-tmpl-mustache">
 			<div class="trial-templ">
 					<div class="image"></div>
-					<p>sample trial slide</p>
-					<h3 class="question">Ist diese Farbe typisch für eine Möhre?</h3>
-					<img class="image" src="images/carrot_purple.png" />
+					<h3 class="question"></h3>
+					<img class="image" />
 					<section class="slider">
 						<span>untypisch</span>
-						<input type="range" min="0" step="5" max="100" value="50"/>
+						<input type="range" id="response" min="0" max="100" value="50"/>
 						<span>sehr typisch</span>
 					</section>
 					<button type="submit" id="continue-btn" class="continue-btn">next</button>
+			</div>
+		</script>
+		<script id="thanks-templ" type="x-tmpl-mustache">
+			<div class="thanks-templ">
+				<h2>
+					Thank you for your time!
+				</h2>
+				<h3>This is what the data that would be submitted to the server would look like</h3>
+				<div class="temp"></div>
 			</div>
 		</script>
 	</body>
