@@ -8,15 +8,12 @@ This project uses the following dependencies:
 * [Mustache templates][2]
 
 
-After cloning the repo, run `npm install` from the main directory to install the dependencies.
-
-
-If you do not have node installed on your machine, you can follow the instructions on [their website][4].
+After cloning the repo, run `npm install` from the main directory to install the dependencies. Npm is a package manager for JS. If you do not have it installed on your machine, you can follow the instructions on [their website][4].
 
 
 [1]: https://jquery.com/ "jQuery"
 [2]: https://github.com/janl/mustache.js "Mustache"
-[4]: https://github.com/npm/npm "npm"
+[4]: https://www.npmjs.com/ "npm"
 
 After installing the dependencies, open `index.html` in the browser to see the experiment.
 
