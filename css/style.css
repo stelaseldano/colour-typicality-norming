@@ -28,9 +28,9 @@ button {
 main {
 	box-sizing: border-box;
 	display: block;
-	margin: 50px auto;
+	margin: 0 auto;
 	max-width: 860px;
-	padding: 0 30px;
+	padding: 50px 30px;
 }
 
 .intro-templ,
@@ -42,9 +42,7 @@ main {
 /* trial template styles */
 
 .trial-templ {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	
 }
 
 .trial-templ h3 {
@@ -52,9 +50,15 @@ main {
 	text-align: center;
 }
 
+.trial-templ .image {
+	display: block;
+	margin: 0 auto;
+}
+
 .trial-templ .slider {
-	display: flex;
+	display: block;
 	margin: 30px auto;
+	width: 660px;
 }
 
 .trial-templ .slider span {
@@ -62,12 +66,25 @@ main {
 	width: 130px;
 }
 
-.trial-templ .slider input {
-	width: 300px;
+.trial-templ .slider .untypisch {
+	float: left;
+}
+
+.trial-templ .slider .typisch {
+	float: right;
+}
+
+.trial-templ .slider input[type="range"] {
+	border: none;
+	outline: none;
+	margin: 0 20px;
+	padding: 0;
+	width: 358px;
 }
 
 .image {
 	margin: 0 auto;
+	width: 80%;
 	max-width: 580px;
 }
 
@@ -105,4 +122,21 @@ input[type="range"]::-webkit-slider-thumb {
 
 .hidden {
 	opacity: 0;
+}
+
+@media (max-width: 740px) {
+
+	.trial-templ .slider {
+		width: 100%;
+	}
+
+	.trial-templ .slider input[type="range"] {
+		margin: 0;
+		width: 50%;
+	}
+
+	.trial-templ .slider span {
+		font-size: 13px;
+		width: 25%;
+	}
 }
