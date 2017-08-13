@@ -43,6 +43,10 @@ var initTrialView = function(trialInfo) {
 	$('.image').attr('src', 'images/' + trialInfo['image']);
 	$('.question').text("Ist diese Farbe typisch für ein/e " + trialInfo['object'] + "?");
 
+	setTimeout(function() {
+		$('.trial-templ').removeClass('hidden');
+	}, 1500);
+
 	$('#continue-btn').on('click', function() {
 		view.response.push($('#response').val());
 		exp.getNextView();
