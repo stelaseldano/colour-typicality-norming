@@ -29,23 +29,34 @@
 		<script id="intro-templ" type="x-tmpl-mustache">
 			<div class="intro-templ">
 				<article>
-					<h1>Welcome page with general information about the study.</h1>
+					<h2>Herzlich Willkommen!</h2>
+					<p>Im Folgenden werden wir Ihnen nacheinander mehrere Gegenstände in verschiedenen Farben zeigen. Bitte bewerten Sie, <strong>wie typisch</strong> die entsprechende Farbe für den dargestellten Gegenstand ist. Die Bewertung erfolgt mittels eines Schiebereglers, welcher von <strong>“sehr untypisch”</strong> bis <strong>“sehr typisch”</strong> reicht.</p>
+						<p>Entscheiden Sie bitte nach Ihrem Gefühl und denken Sie nicht zu lange über Ihre Entscheidung nach.</p>
+						<h3>Vielen Dank!</h3>
 				</article>
-				<button type="submit" id="start-exp-btn">go to experiment</button>
+				<button type="submit" id="start-exp-btn">zum Experiment</button>
 			</div>
 		</script>
 		<script id="instructions-templ" type="x-tmpl-mustache">
 			<div class="instructions-templ">
-				<h2>Instructions page with information what will be shown during the experiment and what the participants are expected to do.</h2>
-				<button type="submit" id="continue-btn" class="continue-btn">continue</button>
+				<h3>Zunächst üben wir den Ablauf mit Ihnen, damit Sie wissen was auf Sie zukommt.</h3>
+				<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
 			</div>
 		</script>
 		<script id="practice-templ" type="x-tmpl-mustache">
-			<div class="practice-templ">
-				<h2>Practice section</h2>
+			<div class="practice-templ trial-templ hidden">
+				<p>Practice section</p>
+				<h3 class="question"></h3>
+				<img class="image" />
+				<section class="slider">
+					<span class="untypisch">sehr untypisch</span>
+					<input type="range" id="response" min="0" max="100" value="50"/>
+					<span class="typisch">sehr typisch</span>
+				</section>
+				<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
 			</div>
 		</script>
-		<script id="begin-templ" type="x-tmpl-mustache">
+		<script id="begin-exp-templ" type="x-tmpl-mustache">
 			<div class="begin-templ">
 				<button type="submit" id="continue-btn" class="continue-btn">start experiment</button>
 			</div>
@@ -55,18 +66,16 @@
 					<h3 class="question"></h3>
 					<img class="image" />
 					<section class="slider">
-						<span class="untypisch">untypisch</span>
+						<span class="untypisch">sehr untypisch</span>
 						<input type="range" id="response" min="0" max="100" value="50"/>
 						<span class="typisch">sehr typisch</span>
 					</section>
-					<button type="submit" id="continue-btn" class="continue-btn">next</button>
+					<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
 			</div>
 		</script>
 		<script id="thanks-templ" type="x-tmpl-mustache">
 			<div class="thanks-templ">
-				<h2>
-					Thank you for your time!
-				</h2>
+				<h2>Danke während Ihrer Zeit!</h2>
 				<h3>This is what the data that would be submitted to the server would look like</h3>
 				<div class="temp"></div>
 			</div>

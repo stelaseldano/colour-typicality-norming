@@ -30,6 +30,49 @@ var initInstructionsView = function() {
 	return view;
 };
 
+var initPracticeView = function(trialInfo, trialIndex) {
+	var view = {};
+
+	view.name = 'practice';
+	view.template = $('#practice-templ').html();
+
+	var rendered = Mustache.render(view.template);
+	$('#main').html(rendered);
+
+	$('.image').attr('src', 'images/' + trialInfo['image']);
+	$('.question').text("Ist diese Farbe typisch für ein/e " + trialInfo['object'] + "?");
+
+	if (trialIndex === 0) {
+		$('.practice-templ').removeClass('hidden');
+	} else {
+		setTimeout(function() {
+			$('.practice-templ').removeClass('hidden');
+		}, 1500);
+	}
+
+	$('#continue-btn').on('click', function() {
+		exp.getNextView();
+	});
+
+	return view;
+};
+
+var initBeginExpView = function() {
+	var view = {};
+
+	view.name = 'beginExp';
+	view.template = $('#begin-exp-templ').html();
+
+	var rendered = Mustache.render(view.template);
+	$('#main').html(rendered);
+
+	$('#continue-btn').on('click', function() {
+		exp.getNextView();
+	});
+
+	return view;
+};
+
 var initTrialView = function(trialInfo, trialIndex) {
 	var view = {};
 

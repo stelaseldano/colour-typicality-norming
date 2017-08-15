@@ -34,8 +34,22 @@ var initCtn = function() {
 		return comb;
 	};
 
+	var generatePracticeTrial = function() {
+		var comb = [];
+		var trials = generateCombinations()
+
+		for (var i = 0; i < 4; i++) {
+			comb.push(trials[i]);
+		}
+
+		return comb;
+	};
+
 	// trial data needed to generate the trial slide
 	ctn.data = generateCombinations();
+
+	// 4 random practice trials
+	ctn.practice = generatePracticeTrial();
 
 	// function that collects participant's response
 	ctn.addResponse = function(trialIndex, response) {
