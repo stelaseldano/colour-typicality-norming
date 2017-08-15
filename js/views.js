@@ -30,7 +30,7 @@ var initInstructionsView = function() {
 	return view;
 };
 
-var initTrialView = function(trialInfo) {
+var initTrialView = function(trialInfo, trialIndex) {
 	var view = {};
 
 	view.name = 'trial';
@@ -43,9 +43,13 @@ var initTrialView = function(trialInfo) {
 	$('.image').attr('src', 'images/' + trialInfo['image']);
 	$('.question').text("Ist diese Farbe typisch für ein/e " + trialInfo['object'] + "?");
 
-	setTimeout(function() {
+	if (trialIndex === 0) {
 		$('.trial-templ').removeClass('hidden');
-	}, 1500);
+	} else {
+		setTimeout(function() {
+			$('.trial-templ').removeClass('hidden');
+		}, 1500);
+	}
 
 	$('#continue-btn').on('click', function() {
 		view.response.push($('#response').val());

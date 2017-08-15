@@ -10,11 +10,11 @@ exp.getNextView = function() {
 		this.view = initInstructionsView();
 	} else if (this.view.name === 'instructions') {
 		this.view.name === 'trial';
-		this.view = initTrialView(this.ctn.data[this.currentTrial]);
+		this.view = initTrialView(this.ctn.data[this.currentTrial], this.currentTrial);
 		this.ctn.addResponse(this.currentTrial, this.view.response);
 		this.currentTrial++;
 	} else if (this.currentTrial < this.ctn.data.length){
-		this.view = initTrialView(this.ctn.data[this.currentTrial]);
+		this.view = initTrialView(this.ctn.data[this.currentTrial], this.currentTrial);
 		this.ctn.addResponse(this.currentTrial, this.view.response);
 		this.currentTrial++;
 	} else {
