@@ -47,7 +47,7 @@ var initPracticeView = function(trialInfo, trialIndex) {
 	} else {
 		setTimeout(function() {
 			$('.practice-templ').removeClass('hidden');
-		}, 0);
+		}, 1500);
 	}
 
 	$('#continue-btn').on('click', function() {
@@ -91,7 +91,7 @@ var initTrialView = function(trialInfo, trialIndex) {
 	} else {
 		setTimeout(function() {
 			$('.trial-templ').removeClass('hidden');
-		}, 0);
+		}, 1500);
 	}
 
 	$('#continue-btn').on('click', function() {
