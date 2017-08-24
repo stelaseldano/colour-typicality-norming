@@ -47,7 +47,9 @@
 			<div class="practice-templ trial-templ hidden">
 				<p>Practice section</p>
 				<h3 class="question"></h3>
-				<img class="image" />
+				<div class="image-container">
+					<img class="image" />
+				</div>
 				<section class="slider">
 					<span class="untypisch">sehr untypisch</span>
 					<input type="range" id="response" min="0" max="100" value="50"/>
@@ -64,7 +66,9 @@
 		<script id="trial-templ" type="x-tmpl-mustache">
 			<div class="trial-templ hidden">
 					<h3 class="question"></h3>
-					<img class="image" />
+					<div class="image-container">
+						<img class="image" />
+					</div>
 					<section class="slider">
 						<span class="untypisch">sehr untypisch</span>
 						<input type="range" id="response" min="0" max="100" value="50"/>

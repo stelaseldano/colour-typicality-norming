@@ -79,10 +79,17 @@ main {
 	text-align: left;
 }
 
+.image-container {
+	margin: 0 auto;
+	width: 580px;
+	max-width: 580px;
+	height: 400px;
+	max-height: 340px;
+}
+
 .image {
 	margin: 0 auto;
-	width: 80%;
-	max-width: 580px;
+	height: 350px;
 }
 
 /* slider styles */
