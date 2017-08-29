@@ -40,7 +40,7 @@ var initPracticeView = function(trialInfo, trialIndex) {
 	$('#main').html(rendered);
 
 	$('.image').attr('src', 'images/' + trialInfo['image']);
-	$('.question').text("Ist diese Farbe typisch für ein/e " + trialInfo['object'] + "?");
+	$('.question').text(trialInfo['sentence']);
 
 	if (trialIndex === 0) {
 		$('.practice-templ').removeClass('hidden');
@@ -84,7 +84,7 @@ var initTrialView = function(trialInfo, trialIndex) {
 	$('#main').html(rendered);
 
 	$('.image').attr('src', 'images/' + trialInfo['image']);
-	$('.question').text("Ist diese Farbe typisch für ein/e " + trialInfo['object'] + "?");
+	$('.question').text(trialInfo['sentence']);
 
 	if (trialIndex === 0) {
 		$('.trial-templ').removeClass('hidden');

@@ -26,17 +26,35 @@ var initCtn = function() {
 	'Aprikose_red', 'Aprikose_blue', 'Aprikose_green', 'Aprikose_purple', 'Aprikose_natural',
 	'Ananas_red', 'Ananas_blue', 'Ananas_green', 'Ananas_purple', 'Ananas_natural'];
 
+
 	var generateCombinations = function() {
 		var combinations = [];
 
 		for (var i = 0; i < ctn.images.length; i++) {
-			combinations.push({
-				image: ctn.images[i] + '.png',
-				object: ctn.images[i].split('_')[0],
-				colour: ctn.images[i].split('_')[1]
-			});
+			var object = ctn.images[i].split('_')[0];
+			var colour = ctn.images[i].split('_')[1];
 
+			if (object === 'Bohnen' ||
+				object === 'Erbsen' ||
+				object === 'Kartoffeln' ||
+				object === 'Trauben' ||
+				object === 'Socken') {
+				combinations.push({
+					image: ctn.images[i] + '.png',
+					object: object,
+					colour: colour,
+					sentence: 'Ist diese Farbe typisch für ' + object + '?'
+				});
+			} else {
+				combinations.push({
+					image: ctn.images[i] + '.png',
+					object: object,
+					colour: colour,
+					sentence: 'Ist diese Farbe typisch für eine ' + object + '?'
+				});
+			}
 		}
+
 		
 		return shuffleComb(combinations);		
 	};

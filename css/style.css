@@ -89,7 +89,8 @@ main {
 
 .image {
 	margin: 0 auto;
-	height: 350px;
+	max-height: 350px;
+	max-width: 580px;
 }
 
 /* slider styles */
