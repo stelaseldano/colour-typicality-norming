@@ -43,14 +43,14 @@ var initCtn = function() {
 					image: ctn.images[i] + '.png',
 					object: object,
 					colour: colour,
-					sentence: 'Ist diese Farbe typisch für ' + object + '?'
+					sentence: 'Wie typisch ist diese Farbe für ' + object + '?'
 				});
 			} else {
 				combinations.push({
 					image: ctn.images[i] + '.png',
 					object: object,
 					colour: colour,
-					sentence: 'Ist diese Farbe typisch für eine ' + object + '?'
+					sentence: 'Wie typisch ist diese Farbe für eine ' + object + '?'
 				});
 			}
 		}
