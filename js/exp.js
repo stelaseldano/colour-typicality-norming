@@ -2,10 +2,10 @@ var initCtn = function() {
 	var ctn = {};
 
 	ctn.images = ['Möhre_purple', 'Möhre_red', 'Möhre_green', 'Möhre_natural', 'Möhre_blue',
-	'Zuccini_red', 'Zuccini_brown', 'Zuccini_blue', 'Zuccini_yellow', 'Zuccini_natural',
+	'Zucchini_red', 'Zucchini_brown', 'Zucchini_blue', 'Zucchini_yellow', 'Zucchini_natural',
 	'Zitrone_red', 'Zitrone_blue', 'Zitrone_green', 'Zitrone_orange', 'Zitrone_natural',
 	'Wäscheklammer_red', 'Wäscheklammer_blue', 'Wäscheklammer_grey', 'Wäscheklammer_black', 'Wäscheklammer_brown', 'Wäscheklammer_green', 'Wäscheklammer_orange', 'Wäscheklammer_purple', 'Wäscheklammer_yellow',
-	'Walnuß_red', 'Walnuß_blue', 'Walnuß_green', 'Walnuß_yellow', 'Walnuß_natural',
+	'Walnuss_red', 'Walnuss_blue', 'Walnuss_green', 'Walnuss_yellow', 'Walnuss_natural',
 	'Trauben_blue', 'Trauben_grey', 'Trauben_yellow', 'Trauben_orange', 'Trauben_natural',
 	'Tomate_blue', 'Tomate_green', 'Tomate_yellow', 'Tomate_purple', 'Tomate_natural',
 	'Sonnenbrille_red', 'Sonnenbrille_blue', 'Sonnenbrille_grey', 'Sonnenbrille_black', 'Sonnenbrille_brown', 'Sonnenbrille_green', 'Sonnenbrille_orange', 'Sonnenbrille_purple', 'Sonnenbrille_yellow',
@@ -21,7 +21,7 @@ var initCtn = function() {
 	'Bohnen_red', 'Bohnen_blue', 'Bohnen_orange', 'Bohnen_yellow', 'Bohnen_natural',
 	'Birne_red', 'Birne_blue', 'Birne_orange', 'Birne_purple', 'Birne_natural',
 	'Banane_red', 'Banane_blue', 'Banane_brown', 'Banane_green', 'Banane_natural',
-	'Avokado_red', 'Avokado_blue', 'Avokado_purple', 'Avokado_yellow', 'Avokado_natural',
+	'Avocado_red', 'Avocado_blue', 'Avocado_purple', 'Avocado_yellow', 'Avocado_natural',
 	'Aubergine_red', 'Aubergine_blue', 'Aubergine_green', 'Aubergine_yellow','Aubergine_natural',
 	'Aprikose_red', 'Aprikose_blue', 'Aprikose_green', 'Aprikose_purple', 'Aprikose_natural',
 	'Ananas_red', 'Ananas_blue', 'Ananas_green', 'Ananas_purple', 'Ananas_natural'];
