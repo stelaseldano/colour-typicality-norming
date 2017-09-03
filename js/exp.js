@@ -97,6 +97,12 @@ var initCtn = function() {
 		ctn.data[trialIndex].typicality = response;
 	};
 
+	// function that records participant's prolific ID
+	ctn.addProlificID = function(prolificID) {
+		console.log(prolificID);
+		ctn.data.ID = prolificID;
+	};
+
 	// functions that converts the data into JSON
 	ctn.getJSON = function() {
 		return JSON.stringify({

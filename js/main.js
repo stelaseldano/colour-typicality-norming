@@ -26,14 +26,14 @@ exp.getNextView = function() {
 		this.ctn.addResponse(this.currentTrial, this.view.response);
 		this.currentTrial++;
 	} else {
-		this.view = initThanksView(this.ctn.getJSON());
+		this.view = initSubmitResultsView();
 	}
 };
 
 /* CTN - colour typicallity norming */
 exp.init = function() {
 	this.ctn = initCtn();
-	this.currentTrial = 0;
-	this.currentPractice = 0;
-	this.view = initIntroductionView();
+	this.currentTrial = 134;
+	this.currentPractice = 3;
+	this.view = initIntroductionView(this.ctn.addProlificID);
 };

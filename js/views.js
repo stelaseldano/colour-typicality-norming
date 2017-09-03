@@ -1,4 +1,4 @@
-var initIntroductionView = function() {
+var initIntroductionView = function(sendData) {
 	var view = {};
 
 	view.name = 'intro';
@@ -8,7 +8,18 @@ var initIntroductionView = function() {
 	$('#main').html(rendered);
 
 	$('#start-exp-btn').on('click', function() {
-		exp.getNextView();
+		var ID = $('#prolificID').val().trim();
+
+		// check if an ID is entered, if not, ask again
+		if (ID === '') {
+			alert('Please enter your prolific ID');
+		} else {
+			sendData({
+				ID: ID
+			});
+			// show next slide only when ID has been entered
+			exp.getNextView();
+		}
 	});
 
 	return view;
@@ -102,16 +113,41 @@ var initTrialView = function(trialInfo, trialIndex) {
 	return view;
 };
 
-var initThanksView = function(data) {
+var initSubmitResultsView = function() {
 	var view = {};
 
-	view.name = 'thanks';
-	view.template = $('#thanks-templ').html();
+	view.name = 'submitResults';
+	view.template = $('#submit-results-templ').html();
 
-	var rendered = Mustache.render(view.template);
+	var rendered = Mustache.render(view.template, {
+		results: exp.ctn.getJSON()
+	});
 	$('#main').html(rendered);
 
-	$('.temp').text(data);
+	$('form').on('submit', function(e) {
+		var url = '';
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: $('form').serialize(),
+			success: function(data) {
+				console.log('Submission successful!');
+				console.log(data);
+			},
+			error: function(data) {
+				console.log('An error occured');
+				console.log(data);
+			}
+		});
+
+		e.preventDefault();
+	});
+
+	$('#submit-results-btn').on('click', function(e) {
+		$('form').addClass('hidden');
+		$('.thanks').removeClass('hidden');
+	});
 
 	return view;
 };

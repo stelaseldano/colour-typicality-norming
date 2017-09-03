@@ -32,9 +32,11 @@
 					<h2>Herzlich Willkommen!</h2>
 					<p>Im Folgenden werden wir Ihnen nacheinander mehrere Gegenstände in verschiedenen Farben zeigen. Bitte bewerten Sie, <strong>wie typisch</strong> die entsprechende Farbe für den dargestellten Gegenstand ist. Die Bewertung erfolgt mittels eines Schiebereglers, welcher von <strong>“sehr untypisch”</strong> bis <strong>“sehr typisch”</strong> reicht.</p>
 						<p>Entscheiden Sie bitte nach Ihrem Gefühl und denken Sie nicht zu lange über Ihre Entscheidung nach.</p>
+						<p>Before you proceed, please enter your Prolific ID in the field below</p>
+						<input id="prolificID" type="text" placeholder="Prolific ID"/>
 						<h3>Vielen Dank!</h3>
+					<button type="submit" id="start-exp-btn">zum Experiment</button>
 				</article>
-				<button type="submit" id="start-exp-btn">zum Experiment</button>
 			</div>
 		</script>
 		<script id="instructions-templ" type="x-tmpl-mustache">
@@ -78,12 +80,17 @@
 					<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
 			</div>
 		</script>
-		<script id="thanks-templ" type="x-tmpl-mustache">
-			<div class="thanks-templ">
+		<script id="submit-results-templ" type="x-tmpl-mustache">
+			<form method="post">
+				<h2>Please click the button below to save your answers</h2>
+				<input type="hidden" name="results" value="{{ results }}" />
+				<button type="submit" id="submit-results-btn">save results</button>
+			</form>
+			<section class="thanks hidden">
 				<h2>Danke während Ihrer Zeit!</h2>
-				<h3>This is what the data that would be submitted to the server would look like</h3>
-				<div class="temp"></div>
-			</div>
+				<h3>Please click 'finish experiment'.</h3>
+				<a href="https://prolific.ac/submissions/complete?cc=321CBURL">finish experiment</a>
+			</section>
 		</script>
 	</body>
 </html>
