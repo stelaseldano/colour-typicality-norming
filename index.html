@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 
 		<!-- fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Lato:400|Noto+Serif:700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400|Noto+Serif:700" rel="stylesheet" />
 
 		<!-- css -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -31,11 +31,13 @@
 				<article>
 					<h2>Herzlich Willkommen!</h2>
 					<p>Im Folgenden werden wir Ihnen nacheinander mehrere Gegenstände in verschiedenen Farben zeigen. Bitte bewerten Sie, <strong>wie typisch</strong> die entsprechende Farbe für den dargestellten Gegenstand ist. Die Bewertung erfolgt mittels eines Schiebereglers, welcher von <strong>“sehr untypisch”</strong> bis <strong>“sehr typisch”</strong> reicht.</p>
-						<p>Entscheiden Sie bitte nach Ihrem Gefühl und denken Sie nicht zu lange über Ihre Entscheidung nach.</p>
+					<p>Entscheiden Sie bitte nach Ihrem Gefühl und denken Sie nicht zu lange über Ihre Entscheidung nach.</p>
+					<form>
 						<p>Before you proceed, please enter your Prolific ID in the field below</p>
-						<input id="prolificID" type="text" placeholder="Prolific ID"/>
+						<input id="prolificID" type="text" required placeholder="Prolific ID"/>
 						<h3>Vielen Dank!</h3>
-					<button type="submit" id="start-exp-btn">zum Experiment</button>
+						<button type="submit" id="start-exp-btn">zum Experiment</button>
+					</form>
 				</article>
 			</div>
 		</script>
@@ -81,8 +83,9 @@
 			</div>
 		</script>
 		<script id="submit-results-templ" type="x-tmpl-mustache">
-			<form method="post">
+			<form id="form">
 				<h2>Please click the button below to save your answers</h2>
+				<input type="hidden" name="ID" value="{{ ID }}" />
 				<input type="hidden" name="results" value="{{ results }}" />
 				<button type="submit" id="submit-results-btn">save results</button>
 			</form>

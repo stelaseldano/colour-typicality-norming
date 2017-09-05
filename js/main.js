@@ -19,11 +19,9 @@ exp.getNextView = function() {
 	} else if (this.view.name === 'beginExp') {
 		this.view.name === 'trial';
 		this.view = initTrialView(this.ctn.data[this.currentTrial], this.currentTrial);
-		this.ctn.addResponse(this.currentTrial, this.view.response);
 		this.currentTrial++;
 	} else if (this.currentTrial < this.ctn.data.length) {
 		this.view = initTrialView(this.ctn.data[this.currentTrial], this.currentTrial);
-		this.ctn.addResponse(this.currentTrial, this.view.response);
 		this.currentTrial++;
 	} else {
 		this.view = initSubmitResultsView();
@@ -33,7 +31,7 @@ exp.getNextView = function() {
 /* CTN - colour typicallity norming */
 exp.init = function() {
 	this.ctn = initCtn();
-	this.currentTrial = 134;
-	this.currentPractice = 3;
+	this.currentTrial = 0;
+	this.currentPractice = 0;
 	this.view = initIntroductionView(this.ctn.addProlificID);
 };

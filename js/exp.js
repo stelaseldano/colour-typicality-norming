@@ -100,7 +100,7 @@ var initCtn = function() {
 	// function that records participant's prolific ID
 	ctn.addProlificID = function(prolificID) {
 		console.log(prolificID);
-		ctn.data.ID = prolificID;
+		ctn.ID = prolificID;
 	};
 
 	// functions that converts the data into JSON

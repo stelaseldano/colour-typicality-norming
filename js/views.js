@@ -10,16 +10,14 @@ var initIntroductionView = function(sendData) {
 	$('#start-exp-btn').on('click', function() {
 		var ID = $('#prolificID').val().trim();
 
-		// check if an ID is entered, if not, ask again
+		sendData(ID);
+		// show next slide only when ID has been entered
+		exp.getNextView();
+/*		// check if an ID is entered, if not, ask again
 		if (ID === '') {
 			alert('Please enter your prolific ID');
 		} else {
-			sendData({
-				ID: ID
-			});
-			// show next slide only when ID has been entered
-			exp.getNextView();
-		}
+		}*/
 	});
 
 	return view;
@@ -89,7 +87,6 @@ var initTrialView = function(trialInfo, trialIndex) {
 
 	view.name = 'trial';
 	view.template = $('#trial-templ').html();
-	view.response = [];
 
 	var rendered = Mustache.render(view.template);
 	$('#main').html(rendered);
@@ -106,7 +103,7 @@ var initTrialView = function(trialInfo, trialIndex) {
 	}
 
 	$('#continue-btn').on('click', function() {
-		view.response.push($('#response').val());
+		exp.ctn.addResponse(trialIndex, $('#response').val());
 		exp.getNextView();
 	});
 
@@ -120,17 +117,19 @@ var initSubmitResultsView = function() {
 	view.template = $('#submit-results-templ').html();
 
 	var rendered = Mustache.render(view.template, {
-		results: exp.ctn.getJSON()
+		results: exp.ctn.getJSON(),
+		ID: exp.ctn.ID
 	});
+	console.log(exp.ctn.data);
 	$('#main').html(rendered);
 
-	$('form').on('submit', function(e) {
-		var url = '';
+	$('#form').on('submit', function(e) {
+		var url = 'http://localhost:8000/save';
 
 		$.ajax({
 			type: "POST",
 			url: url,
-			data: $('form').serialize(),
+			data: $('#form').serialize(),
 			success: function(data) {
 				console.log('Submission successful!');
 				console.log(data);
