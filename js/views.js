@@ -7,17 +7,11 @@ var initIntroductionView = function(sendData) {
 	var rendered = Mustache.render(view.template);
 	$('#main').html(rendered);
 
-	$('#start-exp-btn').on('click', function() {
+	$('form').on('submit', function(e) {
 		var ID = $('#prolificID').val().trim();
 
 		sendData(ID);
-		// show next slide only when ID has been entered
 		exp.getNextView();
-/*		// check if an ID is entered, if not, ask again
-		if (ID === '') {
-			alert('Please enter your prolific ID');
-		} else {
-		}*/
 	});
 
 	return view;
