@@ -117,7 +117,7 @@ var initSubmitResultsView = function() {
 	$('#main').html(rendered);
 
 	$('#form').on('submit', function(e) {
-		var url = 'http://localhost:8000/save';
+		var url = 'https://yat.website/colours_api/save';
 
 		$.ajax({
 			type: "POST",
