@@ -33,7 +33,7 @@
 					<p>Im Folgenden werden wir Ihnen nacheinander mehrere Gegenstände in verschiedenen Farben zeigen. Bitte bewerten Sie, <strong>wie typisch</strong> die entsprechende Farbe für den dargestellten Gegenstand ist. Die Bewertung erfolgt mittels eines Schiebereglers, welcher von <strong>“sehr untypisch”</strong> bis <strong>“sehr typisch”</strong> reicht.</p>
 					<p>Entscheiden Sie bitte nach Ihrem Gefühl und denken Sie nicht zu lange über Ihre Entscheidung nach.</p>
 					<form>
-						<p>Before you proceed, please enter your Prolific ID in the field below</p>
+						<p>Bevor es los geht, bitte geben Sie hier Ihre Prolific ID ein:</p>
 						<input id="prolificID" type="text" required placeholder="Prolific ID"/>
 						<h3>Vielen Dank!</h3>
 						<button type="submit" id="start-exp-btn">zum Experiment</button>
@@ -84,14 +84,14 @@
 		</script>
 		<script id="submit-results-templ" type="x-tmpl-mustache">
 			<form id="form">
-				<h2>Please click the button below to save your answers</h2>
+				<h2>Bitte klicken Sie auf den Button, um Ihre Antworten zu speichern:</h2>
 				<input type="hidden" name="ID" value="{{ ID }}" />
 				<input type="hidden" name="results" value="{{ results }}" />
 				<button type="submit" id="submit-results-btn">save results</button>
 			</form>
 			<section class="thanks hidden">
-				<h2>Danke während Ihrer Zeit!</h2>
-				<h3>To finish the experiment, please follow the link below</h3>
+				<h2>Danke für Ihre Teilnahme!</h2>
+				<h3>Bitte klicken Sie diesen Link an, um das Experiment abzuschließen:</h3>
 				<a href="https://prolific.ac/submissions/complete?cc=321CBURL">https://prolific.ac/submissions/complete?cc=321CBURL</a>
 			</section>
 		</script>
