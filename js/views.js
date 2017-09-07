@@ -114,7 +114,6 @@ var initSubmitResultsView = function() {
 		results: exp.ctn.getJSON(),
 		ID: exp.ctn.ID
 	});
-	console.log(exp.ctn.data);
 	$('#main').html(rendered);
 
 	$('#form').on('submit', function(e) {
