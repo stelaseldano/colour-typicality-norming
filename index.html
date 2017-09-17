@@ -59,8 +59,8 @@
 					<input type="range" id="response" min="0" max="100" value="50"/>
 					<span class="typisch">sehr typisch</span>
 				</section>
-				<p class="helper-text hidden">To continue, please first move the slider</p>
 				<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
+				<p class="helper-text hidden">To continue, please first move the slider</p>
 			</div>
 		</script>
 		<script id="begin-exp-templ" type="x-tmpl-mustache">
@@ -71,17 +71,23 @@
 		</script>
 		<script id="trial-templ" type="x-tmpl-mustache">
 			<div class="trial-templ hidden">
-					<h3 class="question"></h3>
-					<div class="image-container">
-						<img class="image" />
+				<div class="progress-bar-container">
+					<p>progress</p>
+					<div class="progress-bar-body">
+						<div class="progress-bar-fill"></div>
 					</div>
-					<section class="slider">
-						<span class="untypisch">sehr untypisch</span>
-						<input type="range" id="response" min="0" max="100" value="50"/>
-						<span class="typisch">sehr typisch</span>
-					</section>
-					<p class="helper-text hidden">To continue, please first move the slider</p>
-					<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
+				</div>
+				<h3 class="question"></h3>
+				<div class="image-container">
+					<img class="image" />
+				</div>
+				<section class="slider">
+					<span class="untypisch">sehr untypisch</span>
+					<input type="range" id="response" min="0" max="100" value="50"/>
+					<span class="typisch">sehr typisch</span>
+				</section>
+				<button type="submit" id="continue-btn" class="continue-btn">Weiter</button>
+				<p class="helper-text hidden">To continue, please first move the slider</p>
 			</div>
 		</script>
 		<script id="submit-results-templ" type="x-tmpl-mustache">

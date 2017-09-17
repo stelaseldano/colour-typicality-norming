@@ -37,13 +37,41 @@ main {
 	display: block;
 	margin: 0 auto;
 	max-width: 860px;
-	padding: 50px 30px;
+	padding: 30px;
 }
 
 .intro-templ,
 .instructions-templ,
 .thanks-templ {
 	margin: 0 auto;
+}
+
+/* progress bar */
+
+.progress-bar-container p {
+	margin: 0 0 5px 0;
+	padding: 0;
+	text-align: center;
+}
+
+.progress-bar-body {
+	box-sizing: border-box;
+	border: 1px solid #232323;
+	height: 16px;
+	margin: 0 auto;
+	width: 220px;
+
+	position: relative;
+}
+
+.progress-bar-fill {
+	background: #232323;
+	height: 14px;
+	width: 0;
+
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 /* trial template styles */

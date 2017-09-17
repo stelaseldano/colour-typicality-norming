@@ -95,9 +95,16 @@ var initTrialView = function(trialInfo, trialIndex) {
 	var rendered = Mustache.render(view.template);
 	$('#main').html(rendered);
 
+	// sets image and sentence for the slide
 	$('.image').attr('src', 'images/' + trialInfo['image']);
 	$('.question').text(trialInfo['sentence']);
+	// fills the progress bar
+	$('.progress-bar-fill').width(
+		$('.progress-bar-body').width() / exp.ctn.data.length
+		+ ($('.progress-bar-body').width() / exp.ctn.data.length) * trialIndex
+	);
 
+	// shows 1500 ms of blank screen before each slide (except the first)
 	if (trialIndex === 0) {
 		$('.trial-templ').removeClass('hidden');
 	} else {
@@ -106,11 +113,13 @@ var initTrialView = function(trialInfo, trialIndex) {
 		}, 1500);
 	}
 
+	// checks if the slider has been changed
 	$('#response').bind('change', function() {
 		sliderMoved = true;
 	});
 
 	$('#continue-btn').on('click', function() {
+		// if the slider has been changed, records the value and shows next slide
 		if (sliderMoved === true) {
 			exp.ctn.addResponse(trialIndex, $('#response').val());
 			exp.getNextView();
