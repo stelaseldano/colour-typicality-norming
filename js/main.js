@@ -34,4 +34,5 @@ exp.init = function() {
 	this.currentTrial = 0;
 	this.currentPractice = 0;
 	this.view = initIntroductionView(this.ctn.addProlificID);
+	// this.view = initTrialView(this.ctn.data[this.currentTrial], this.currentTrial);
 };

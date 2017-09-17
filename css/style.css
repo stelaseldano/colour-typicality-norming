@@ -79,6 +79,10 @@ main {
 	text-align: left;
 }
 
+.trial-templ .helper-text {
+	text-align: center;
+}
+
 .image-container {
 	margin: 0 auto;
 	width: 580px;

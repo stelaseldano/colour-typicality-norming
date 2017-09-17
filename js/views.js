@@ -35,6 +35,7 @@ var initInstructionsView = function() {
 
 var initPracticeView = function(trialInfo, trialIndex) {
 	var view = {};
+	var sliderMoved = false;
 
 	view.name = 'practice';
 	view.template = $('#practice-templ').html();
@@ -53,8 +54,16 @@ var initPracticeView = function(trialInfo, trialIndex) {
 		}, 1500);
 	}
 
+	$('#response').bind('change', function() {
+		sliderMoved = true;
+	});
+
 	$('#continue-btn').on('click', function() {
-		exp.getNextView();
+		if (sliderMoved === true) {
+			exp.getNextView();
+		} else {
+			$('.helper-text').removeClass('hidden');
+		}
 	});
 
 	return view;
@@ -78,6 +87,7 @@ var initBeginExpView = function() {
 
 var initTrialView = function(trialInfo, trialIndex) {
 	var view = {};
+	var sliderMoved = false;
 
 	view.name = 'trial';
 	view.template = $('#trial-templ').html();
@@ -96,9 +106,17 @@ var initTrialView = function(trialInfo, trialIndex) {
 		}, 1500);
 	}
 
+	$('#response').bind('change', function() {
+		sliderMoved = true;
+	});
+
 	$('#continue-btn').on('click', function() {
-		exp.ctn.addResponse(trialIndex, $('#response').val());
-		exp.getNextView();
+		if (sliderMoved === true) {
+			exp.ctn.addResponse(trialIndex, $('#response').val());
+			exp.getNextView();
+		} else {
+			$('.helper-text').removeClass('hidden');
+		}
 	});
 
 	return view;
