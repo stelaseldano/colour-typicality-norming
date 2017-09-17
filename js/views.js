@@ -54,7 +54,10 @@ var initPracticeView = function(trialInfo, trialIndex) {
 		}, 1500);
 	}
 
-	$('#response').bind('change', function() {
+	$('#response').on('change', function() {
+		sliderMoved = true;
+	});
+	$('#response').on('click', function() {
 		sliderMoved = true;
 	});
 
@@ -98,6 +101,7 @@ var initTrialView = function(trialInfo, trialIndex) {
 	// sets image and sentence for the slide
 	$('.image').attr('src', 'images/' + trialInfo['image']);
 	$('.question').text(trialInfo['sentence']);
+	
 	// fills the progress bar
 	$('.progress-bar-fill').width(
 		$('.progress-bar-body').width() / exp.ctn.data.length
@@ -114,7 +118,10 @@ var initTrialView = function(trialInfo, trialIndex) {
 	}
 
 	// checks if the slider has been changed
-	$('#response').bind('change', function() {
+	$('#response').on('change', function() {
+		sliderMoved = true;
+	});
+	$('#response').on('click', function() {
 		sliderMoved = true;
 	});
 
