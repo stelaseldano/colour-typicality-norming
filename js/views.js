@@ -7,11 +7,15 @@ var initIntroductionView = function(sendData) {
 	var rendered = Mustache.render(view.template);
 	$('#main').html(rendered);
 
-	$('form').on('submit', function(e) {
+	$('#start-exp-btn').on('click', function() {
 		var ID = $('#prolificID').val().trim();
 
-		sendData(ID);
-		exp.getNextView();
+		if (ID === "") {
+				alert("Bitte geben Sie eine Prolific-ID ein.");
+		} else {
+				sendData(ID);
+				exp.getNextView();
+		}
 	});
 
 	return view;
